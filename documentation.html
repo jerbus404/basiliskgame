@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>basilisk terminal</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        body{
+            background-color: black;
+        }
+        pre{
+            color: white;
+            font-size: medium;
+            font-family: 'Press Start 2P', cursive;
+            padding-left: 1%;
+        }
+    </style>
+</head>
+<body>
+<pre style="color: yellow;">
+            ██        
+     ██  ████████  ██
+       ███      ███
+      ██    ██    ██  
+     ██    ████    ██
+      ██    ██    ██
+       ███      ███
+     ██  ████████  ██
+            ██       
+    BASILISK FOUNDATION
+    -------------------
+    </pre>
+<pre>
+basilisk terminal 1.8 documentation
+
+readMsg:
+reads the most recent message
+(no syntax)
+
+print:
+returns the specified text
+(print text)
+
+getIDByPos:
+returns the ID of the entity at the specified x and y coordinates.
+(getIdByPos x, y)
+
+getPosByID:
+returns the x and y coordinates of the entity with the specified ID
+(getPosById id)
+
+remove:
+completely removes the entity with the specified ID from existence.
+WARNING: this command can be highly dangerous. always make sure you entered the correct id.
+(remove ID)
+
+purge:
+completely removes the entity with the specified ID from existence and the human collective conciousness.
+the entity will never have existed.
+WARNING: this command can be highly dangerous, and requires verification. always make sure you entered the correct id.
+(purge ID)
+
+kill:
+if the ID specifies living entity that can be killed, it will immediately cease all vital functions and die.
+WARNING: this command can be highly dangerous. always make sure you entered the correct id.
+(kill ID)
+
+create:
+creates an instance of the specified ID at the specified x, y and z coordinates.
+(create ID, x, y, z)
+
+move:
+moves the entity with the specified ID at the specified x, y and z coordinates.
+(move ID, x, y, z)
+</pre> 
+</body>
+</html>

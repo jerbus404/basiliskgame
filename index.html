@@ -14,6 +14,12 @@
             font-family: 'Press Start 2P', cursive;
             padding-left: 1%;
         }
+        h1{
+            color: white;
+            font-size: large;
+            font-family: 'Press Start 2P', cursive;
+            padding-left: 1%;
+        }
         .term{
             background-color: black;
             color: white;
@@ -41,12 +47,19 @@
         #f{
             color:yellow;
         }
+        #f1{
+            color:yellow;
+            line-height: 50%;
+        }
 
     </style>
 </head>
 <body>
 <input type='text' class="term" id="term">  
 <script>
+    msg = null
+    var youID = '54E18214407B'
+    var pcID = '890AFB310ED3'
     var term = document.getElementById("term")
     term.value = ""
     function printline(te, num){
@@ -58,7 +71,7 @@
     printline('Welcome to basilisk terminal 1.8.', 'c')
     printline('initialising null variables...', 'b')
     setTimeout(function(){
-        printline('establishing connection to Basilisk foundation Z-class conceptual object manupulation node...', 'b')
+       printline('establishing connection to Basilisk foundation Z-class conceptual object manupulation node...', 'b')
         setTimeout(function(){
             printline('creating reality modification reference point...', 'b')
             printline('calibrating systems...', 'b')
@@ -77,20 +90,47 @@
             term.focus()
             }
     })
-    function cmds(text){
-        cmd = text.split(" ")[0];
-        if(cmd == 'help'){
-            printline(`the documentation can be found <a href='file:///home/jerbus/Desktop/jerbus/doc.txt' target="_blank">here</a>`)
-        }else if(cmd=='readMsg'){
-            for(i in cmsg){
-                printline(cmsg[i], 'e')
+    function checkId(x, y, z){
+        if(text.split(' ')[1]==x && text.split(' ')[2]==y && text.split(' ')[3]==z){
+                return(true)
             }
+    }
+    function cmds(text){
+        cmd = text.split(' ')[0];
+        if(cmd == 'help'){
+            printline(`the documentation can be found <a href='documentation.html' target="_blank">here</a>`)
+        }else if(cmd=='readMsg'){
+            if(msg){
+                for(i in msg){
+                    printline(msg[i], 'e')
+                }
+                msg = null
+            }else{
+                printline('there are currently no messages', 'd')
+               
+            }
+        }else if(cmd=='getIdByPos'){
+            function checkId(x, y, z){
+                if(text.split(' ')[1]==x && text.split(' ')[2]==y && text.split(' ')[3]==z){
+                    return(true)
+                }
+            }
+            if(checkId(0, 0, 0)){
+                printline(`the entity ID at the specified coordinates is ${youID} (this is you)`)
+            }
+            if(checkId(1, 0, 0)){
+                printline(`the entity ID at the specified coordinates is ${pcID} (this is your computer, the C.O.M terminal)`)
+            }
+        }else if(cmd=='print'){
+            printline(text.split(' ').slice(1).join(' '))
+        }else if(cmd=='logo'){
+            document.body.insertAdjacentHTML('afterend', `<img src="logo.png">`)
         }else{
             printline('invalid command', 'd')
         }
     }
     setTimeout(function(){
-        cmsg = [`+--[NEW MESSAGE]-----------------------------------------+`,
+        msg = [`+--[NEW MESSAGE]-----------------------------------------+`,
                 `from "Site Overseer", to "Miachel b."`,
                 `Welcome, miachel, to your new job at BASILISK FOUNDATION.`,
                 `As you know, due to a recent breach of containment, you are working from home.`,
@@ -104,8 +144,12 @@
                 `and will result in immediate termination via cognitohazard.`,
                 `thank you for working with us, and good luck.`,
                 `+-------------------------------------------------------+`].reverse()
-        printline(`[!] you have one (1) pending message. use the command "readMsg" to open it.`, 'e')
-    }, 19000)
+        printline(`[!] you have one (1) pending message. use the command "readMsg" to open it.`, 'f')
+    }, 20000)
+    function warning(text){
+        printline(`[!] WARNING: ${text}`, 'd')
+    }
+
 </script> 
 </body>
 </html>
