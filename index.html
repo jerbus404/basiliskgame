@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>basilisk terminal</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        body{
+            background-color: black;
+            color:white;
+            font-size: small;
+        }
+        h1{
+            color: white;
+            font-size: small;
+            font-family: 'Press Start 2P', cursive;
+            padding-left: 1%;
+        }
+        .term{
+            background-color: black;
+            color: white;
+            border: none;
+            outline: none;
+            font-family: 'Press Start 2P', cursive;
+            width: 80%;
+        }
+
+    </style>
+</head>
+<body>
+<input type='text' class="term" id="term">  
+<script>
+    var term = document.getElementById("term")
+    document.addEventListener('keypress', function(e){
+        if(e.keyCode==13){
+            nt = document.body.insertAdjacentHTML('afterend', '<h1>'+term.value+'</h1>')
+        term.value = ""
+            }
+    })
+</script>  
+</body>
+</html>
